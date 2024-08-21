@@ -18,7 +18,7 @@
 #define WHITE 37
 #define BRIGHT_WHITE 97
 
-void set_color(int color); // Pr#defines the corresponding ANSI escape sequence to set a color in the terminal
+void set_color(int color); // Prints the corresponding ANSI escape sequence to set a color in the terminal
 void clear_screen(void);   // Clears the screen
 char getch(void);          // Read character from user
 #endif
