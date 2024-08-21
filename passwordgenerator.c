@@ -13,7 +13,7 @@ char *generate_password(uint32_t length, bool letters, bool digits, bool charact
 {
     CSPRNG csprng = csprng_create();
 
-    size_t allocated = 1;
+    size_t allocated = 1; // Room for '\0'
     if (letters)
         allocated += strlen(LETTERS);
     if (digits)
