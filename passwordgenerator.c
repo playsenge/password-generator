@@ -22,7 +22,7 @@ char *generate_password(uint32_t length, bool letters, bool digits, bool charact
         allocated += strlen(CHARACTERS);
 
     char symbols[allocated];
-    strcpy(symbols, "");
+    strncpy(symbols, "", 1);
 
     if (letters)
         strcat(symbols, LETTERS);
@@ -34,6 +34,13 @@ char *generate_password(uint32_t length, bool letters, bool digits, bool charact
     symbols[allocated - 1] = '\0';
 
     char *password = malloc(length + 1 * sizeof(char));
+
+    if (password == NULL)
+    {
+        char *error = malloc(100);
+        sprintf(error, "Error. Are you sure your computer has %u bytes of RAM?", length);
+        return error;
+    }
 
     for (size_t i = 0; i < length; i++)
     {
