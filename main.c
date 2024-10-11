@@ -104,15 +104,15 @@ void view_password(char *password)
     clear_screen();
 
     set_color(WHITE);
-    printf("Your password is ");
+    (void)printf("Your password is ");
 
     set_color(BRIGHT_GREEN);
-    printf("%s\n", password);
+    (void)printf("%s\n", password);
 
     free(password);
 
     set_color(RED);
-    printf("Press any key to return to the home screen...");
+    (void)printf("Press any key to return to the home screen...");
 
     getch();
 
